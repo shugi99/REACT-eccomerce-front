@@ -123,16 +123,6 @@ const Header = () => {
           </SubMenu>
 
           {!userInfo && (
-            <Item
-              key='register'
-              icon={<UserAddOutlined />}
-              className='float-right'
-            >
-              <Link to='/register'>Register</Link>
-            </Item>
-          )}
-
-          {!userInfo && (
             <Item key='login' icon={<UserOutlined />} className='float-right'>
               <Link to='/login'>Login</Link>
             </Item>

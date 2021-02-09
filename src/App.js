@@ -6,6 +6,7 @@ import './App.css';
 
 import { LoadingOutlined } from '@ant-design/icons';
 import ResetPassword from './pages/auth/ResetPassword';
+import Loader from './components/loader/Loader';
 
 const ContactForm = lazy(() => import('./components/contanctForm/ContactForm'));
 
@@ -50,9 +51,7 @@ const App = () => {
     <Suspense
       fallback={
         <div className='col text-center p-5'>
-          __ React Redux EC
-          <LoadingOutlined />
-          MMERCE __
+          <Loader />
         </div>
       }
     >

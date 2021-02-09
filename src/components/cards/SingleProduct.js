@@ -14,7 +14,7 @@ import _ from 'lodash';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToWishlist } from '../../functions/user';
 import { toast } from 'react-toastify';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const { TabPane } = Tabs;
 
@@ -120,18 +120,15 @@ const SingleProduct = ({ product, onStarClick, star }) => {
           <Card
             actions={[
               <Tooltip placement='top' title={tooltip}>
-                <Button
-                  onClick={handleAddToCart}
-                  disabled={product.quantity < 1}
-                >
+                <Link onClick={handleAddToCart} disabled={product.quantity < 1}>
                   <ShoppingCartOutlined className='text-danger' />
                   <br />
                   {product.quantity < 1 ? 'Out of Stock' : 'Add To Cart'}
-                </Button>
+                </Link>
               </Tooltip>,
-              <Button onClick={handleAddToWishlist}>
+              <Link onClick={handleAddToWishlist}>
                 <HeartOutlined className='text-info' /> <br /> Add to Wishlist
-              </Button>,
+              </Link>,
               <RatingModal>
                 <StarRating
                   name={_id}

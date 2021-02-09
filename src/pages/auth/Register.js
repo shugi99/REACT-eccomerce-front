@@ -5,6 +5,7 @@ import { register } from '../../functions/auth';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
+import Message from '../../components/message/Message';
 
 const Register = ({ history }) => {
   const [name, setName] = useState('');
@@ -25,6 +26,9 @@ const Register = ({ history }) => {
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
+
+  const userRegister = useSelector((state) => state.userRegister);
+  const { error } = userRegister;
 
   useEffect(() => {
     if (userInfo) history.push('/');
@@ -136,6 +140,7 @@ const Register = ({ history }) => {
     <div className='container p-5'>
       <div className='row'>
         <div className='col-md-6 offset-md-3'>
+          {error && <Message>{error}</Message>}
           <h4>Register</h4>
           {registerForm()}
         </div>

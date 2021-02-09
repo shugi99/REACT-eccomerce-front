@@ -91,6 +91,9 @@ const Product = ({ match }) => {
       </div>
       <br />
       <br />
+      <br />
+
+      <hr />
       <AppFooter />
     </>
   );

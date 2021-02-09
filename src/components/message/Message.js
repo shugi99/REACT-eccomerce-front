@@ -1,11 +1,16 @@
 import React from 'react';
-import { Alert } from 'antd';
+import { Alert, Col } from 'antd';
 
 const Message = ({ variant, children }) => {
-  return <Alert variant={variant}>{children}</Alert>;
+  return (
+    <>
+      <Col span={16}>
+        <Alert message={children} type='info'></Alert>
+      </Col>
+
+      <br />
+    </>
+  );
 };
 
-Message.defaultProps = {
-  variant: 'info',
-};
 export default Message;
