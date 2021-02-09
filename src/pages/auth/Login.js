@@ -54,7 +54,6 @@ const NormalLoginForm = ({ history }) => {
   // };
 
   const handleSubmit = async (e) => {
-    console.log('wtf', email);
     dispatch(login(email, password));
   };
 

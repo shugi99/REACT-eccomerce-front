@@ -20,10 +20,8 @@ class ResetPassword extends Component {
       resetPasswordLink: this.props.match.params.resetPasswordToken,
     }).then((data) => {
       if (data.error) {
-        console.log(data.error);
         this.setState({ error: data.error });
       } else {
-        console.log(data.message);
         this.setState({ message: data.message, newPassword: '' });
       }
     });

@@ -26,7 +26,6 @@ const Wishlist = () => {
   useEffect(() => {
     const loadWishlist = () =>
       getWishlist(userInfo.token).then((res) => {
-        // console.log(res);
         setWishlist(res.data.wishlist);
       });
     loadWishlist();

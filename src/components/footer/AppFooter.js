@@ -21,15 +21,6 @@ function AppFooter() {
       </div>
       <ul className='socials'>
         <li>
-          <a
-            href='https://www.facebook.com/shugiyen.lazala'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <FacebookOutlined />
-          </a>
-        </li>
-        <li>
           <a href='https://www.github.com/' target='_blank' rel='noreferrer'>
             <GithubOutlined />
           </a>
@@ -46,7 +37,7 @@ function AppFooter() {
         <li>
           <Tooltip title='Portfolio site'>
             <a
-              href='https://www.pinterest.com/'
+              href='https://shugi-portfolio.vercel.app/'
               target='_blank'
               rel='noreferrer'
             >

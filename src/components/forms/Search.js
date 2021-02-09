@@ -17,11 +17,9 @@ const Search = () => {
       type: 'SEARCH_QUERY',
       payload: { text: e.target.value },
     });
-    console.log(e.target.value);
   };
 
   const handleSubmit = (e) => {
-    console.log(e);
     history.push(`/shop?${e}`);
   };
 

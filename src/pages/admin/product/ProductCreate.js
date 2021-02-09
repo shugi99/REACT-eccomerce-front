@@ -56,12 +56,10 @@ const ProductCreate = () => {
   const handleSubmit = () => {
     createProduct(values, userInfo.token)
       .then((res) => {
-        console.log(res);
         window.alert(`"${res.data.title}" is created`);
         window.location.reload();
       })
       .catch((err) => {
-        console.log(err);
         // if (err.response.status === 400) toast.error(err.response.data);
         toast.error(err.response.data.err);
       });
@@ -69,14 +67,11 @@ const ProductCreate = () => {
 
   const handleChange = (name) => (e) => {
     setValues({ ...values, [name]: e.target.value });
-    console.log(values);
   };
 
   const handleCatagoryChange = (value) => {
-    console.log('CLICKED CATEGORY', value);
     setValues({ ...values, subs: [], category: value });
     getCategorySubs(value).then((res) => {
-      console.log('SUB OPTIONS ON CATGORY CLICK', res);
       setSubOptions(res.data);
     });
     setShowSub(true);

@@ -80,7 +80,6 @@ const ProductUpdate = ({ match, history }) => {
 
   const handleChange = (name) => (e) => {
     setValues({ ...values, [name]: e.target.value });
-    console.log(values);
   };
 
   useEffect(() => {
@@ -91,7 +90,6 @@ const ProductUpdate = ({ match, history }) => {
 
     const loadProduct = () => {
       getProduct(slug).then((p) => {
-        // console.log("single product", p);
         // 1 load single proudct
 
         form.setFieldsValue({
@@ -116,7 +114,7 @@ const ProductUpdate = ({ match, history }) => {
         p.data.subs.forEach((s) => {
           arr.push(s._id);
         });
-        console.log('ARR', arr);
+
         setArrayOfSubs((prev) => arr); // required for ant design select to work
         form.setFieldsValue({ Subs: arr });
         setLoading(false);
@@ -162,7 +160,6 @@ const ProductUpdate = ({ match, history }) => {
     // show its sub categories in default
     if (values.category._id === e) {
       getProduct(slug).then((p) => {
-        // console.log("single product", p);
         // 1 load single proudct
         setValues({ ...values, ...p.data });
         // 2 load single product category subs

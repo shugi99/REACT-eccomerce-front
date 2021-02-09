@@ -49,7 +49,6 @@ const SubCreate = () => {
   };
 
   const categoryChange = (e) => {
-    console.log(e);
     setCategory(e);
   };
 
@@ -62,26 +61,21 @@ const SubCreate = () => {
   }, [callback]);
 
   const handleSubmit = (e) => {
-    console.log('new', e);
     setLoading(true);
     createSub({ name: e.name, parent: e.category }, userInfo.token)
       .then((res) => {
-        // console.log(res)
         setLoading(false);
         setName('');
         toast.success(`"${res.data.name}" is created`);
         setCallback(!callback);
       })
       .catch((err) => {
-        console.log(err);
         setLoading(false);
         if (err.response.status === 400) toast.error(err.response.data);
       });
   };
 
   const handleRemove = async (slug) => {
-    // let answer = window.confirm("Delete?");
-    // console.log(answer, slug);
     if (window.confirm('Delete?')) {
       setLoading(true);
       removeSub(slug, userInfo.token)

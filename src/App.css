@@ -154,6 +154,10 @@ title holder
   padding: 20px 0 0 0;
 }
 
+.block5 {
+  padding: 60px 0 60px 0;
+  margin-bottom: 60px;
+}
 .aboutBlock .contentHolder {
   text-align: center;
   margin: 0 0 50px;
@@ -222,7 +226,6 @@ title holder
   padding-top: 20px;
 }
 .mobileVisibleSearchInput {
-  display: none;
   padding-top: 20px;
 }
 
@@ -232,25 +235,26 @@ title holder
 }
 
 .mobileHiddenSearchInput {
-  display: block;
   float: right;
-  padding: 8px;
+  padding: 6px;
+  margin-top: 3px;
+  width: 180px;
 }
 
+.mobileVisibleSearchInput {
+  margin-left: auto;
+
+  width: 100px;
+}
 @media only screen and (max-width: 767px) {
   .mobileVisible {
     display: block;
-  }
-  .mobileVisibleSearchInput {
-    display: block;
-    margin-left: auto;
-    width: 220px;
   }
 
   .mobileHidden {
     display: none;
   }
-  .mobileHiddenSearchInput {
-    display: none;
-  }
+  /* .mobileHiddenSearchInput {
+    
+  } */
 }

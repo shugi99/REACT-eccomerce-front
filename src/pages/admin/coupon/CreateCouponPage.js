@@ -90,7 +90,7 @@ const CreateCouponPage = () => {
         setExpiry('');
         toast.success(`"${res.data.name}" is created`);
       })
-      .catch((err) => console.log('create coupon err', err));
+      .catch((err) => toast.error(err));
   };
 
   const handleRemove = (couponId) => {
@@ -102,17 +102,14 @@ const CreateCouponPage = () => {
           setLoading(false);
           toast.error(`Coupon "${res.data.name}" deleted`);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => toast.error(err));
     }
   };
 
   function onChange(value, dateString) {
     setExpiry(value);
-    console.log('Formatted Selected Time: ', dateString);
   }
-  function onOk(value) {
-    console.log('onOk: ', value);
-  }
+  function onOk(value) {}
 
   return (
     <>

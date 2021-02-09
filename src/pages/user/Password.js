@@ -25,8 +25,6 @@ const Password = () => {
 
   useEffect(() => {
     currentUser(userInfo.token).then((c) => {
-      console.log(c.data);
-
       form.setFieldsValue({
         name: c.data.name,
         email: c.data.email,
@@ -36,7 +34,6 @@ const Password = () => {
     });
   }, [userInfo]);
   const submitHandler = (e) => {
-    console.log(e);
     if (e.password !== e.confirmPassword) {
       toast.error('Password does not match');
     } else {
@@ -46,7 +43,6 @@ const Password = () => {
           toast.success(`Account is updated`);
         })
         .catch((err) => {
-          console.log(err);
           setLoading(false);
           toast.error(err.response.data.err);
         });

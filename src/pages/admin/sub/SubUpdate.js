@@ -43,18 +43,16 @@ const SubUpdate = ({ match, history }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(name);
+
     setLoading(true);
     updateSub(match.params.slug, { name, parent }, userInfo.token)
       .then((res) => {
-        // console.log(res)
         setLoading(false);
         setName('');
         toast.success(`"${res.data.name}" is updated`);
         history.push('/admin/sub');
       })
       .catch((err) => {
-        console.log(err);
         setLoading(false);
         if (err.response.status === 400) toast.error(err.response.data);
       });

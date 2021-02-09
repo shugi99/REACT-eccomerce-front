@@ -32,7 +32,6 @@ const ContactForm = () => {
       url: `${process.env.REACT_APP_API}/send`,
       data: e,
     }).then((response) => {
-      console.log('hey', response);
       if (response.data.status === 'success') {
         message.info('Message Sent.');
         form.resetFields();
@@ -58,14 +57,13 @@ const ContactForm = () => {
       {loading ? (
         <Spin tip='Submitting...'>
           <Row>
-            <Col md={{ offset: 6, span: 12 }}>
+            <Col md={{ offset: 6, span: 12 }} xm={24} sm={24}>
               <div className='block2'>
                 <div className='titleHolder3'>
                   <h2>Contact Shugi</h2>
                 </div>
               </div>
               <Form
-                {...layout}
                 name='nest-messages'
                 form={form}
                 onFinish={handleSubmit}
@@ -125,7 +123,7 @@ const ContactForm = () => {
           <Col md={{ offset: 6, span: 12 }}>
             <div className='block2'>
               <div className='titleHolder3'>
-                <h2>Contact Shugi</h2>
+                <h2>Got any questions? </h2>
               </div>
             </div>
             <Form

@@ -61,14 +61,12 @@ const CategoryCreate = () => {
     setLoading(true);
     createCategory(e, userInfo.token)
       .then((res) => {
-        // console.log(res)
         setLoading(false);
         setName('');
         toast.success(`"${res.data.name}" is created`);
         setCallback(!callback);
       })
       .catch((err) => {
-        console.log(err);
         setLoading(false);
         if (err.response.status === 400) toast.error(err.response.data);
       });
@@ -76,7 +74,7 @@ const CategoryCreate = () => {
 
   const handleRemove = async (slug) => {
     // let answer = window.confirm("Delete?");
-    // console.log(answer, slug);
+
     if (window.confirm('Delete?')) {
       setLoading(true);
       removeCategory(slug, userInfo.token)
